@@ -15,6 +15,10 @@ function convertToObject(sourceString) {
   for (let i = 0; i < checkedArr.length; i++) {
     const valueArr = checkedArr[i].split(':');
 
+    if (valueArr.length < 2 || !valueArr[0] || !valueArr[1]) {
+      continue;
+    }
+
     const keyObj = valueArr[0].trim();
     const valueObj = valueArr[1].trim();
 
